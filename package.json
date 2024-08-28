@@ -1,0 +1,32 @@
+{
+  "name": "sustain-farmers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpm -r build",
+    "start": "pnpn -r start",
+    "dev": "pnpm -r dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@expo/cli": "~0.18.13",
+    "@nx/expo": "19.6.2",
+    "@nx/jest": "19.6.2",
+    "@nx/react-native": "19.6.2",
+    "jest": "^29.7.0",
+    "nx": "19.6.2"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "dependencies": {
+    "expo": "~51.0.8",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.74.1"
+  }
+}
