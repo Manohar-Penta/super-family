@@ -17,17 +17,15 @@ export const signIn = async (
   } = await supabase.auth.getUser(token);
 
   if (error) {
-    console.log(error);
     next(error);
   }
 
-  if (process.env.JWT_SECRET && user)
-    res.cookie("user", jwt.sign({ id: user.id }, process.env.JWT_SECRET));
-  else return res.status(500);
+  if (process.env.JWT_SECRET && user) {
+    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET);
+    return res.status(HttpStatusCode.Accepted).send({ token });
+  }
 
-  return res
-    .status(HttpStatusCode.Created)
-    .send({ status: true, msg: "Signed In!!!" });
+  return res.status(500);
 };
 
 export const signOut = (req: Request, res: Response, next: NextFunction) => {

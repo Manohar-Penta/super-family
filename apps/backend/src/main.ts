@@ -1,7 +1,7 @@
 import express from "express";
 import "dotenv/config";
 import authRouter from "./routers/authRouter";
-import path from "node:path";
+// import path from "node:path";
 import cookieParser from "cookie-parser";
 import { NextFunction, Request, Response } from "express";
 import { authorize } from "./middlewares/auth";
