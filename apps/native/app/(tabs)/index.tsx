@@ -1,17 +1,15 @@
 // app/tabs/index.tsx
-import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
-import { useRouter } from 'expo-router';
+import React from "react";
+import { View, Text, Button, StyleSheet } from "react-native";
+import { useRouter } from "expo-router";
 
-export default function HomeScreen() {
+export default async function HomeScreen() {
   const router = useRouter();
 
   const goToLogin = () => {
-    console.log('Navigating to login screen');
-    router.push('/(tabs)/login');  // Correct path including the layout identifier
+    console.log("Navigating to login screen");
+    router.push("/(tabs)/login"); // Correct path including the layout identifier
   };
-  
-  
 
   return (
     <View style={styles.container}>
@@ -24,8 +22,8 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   text: {
     fontSize: 20,
